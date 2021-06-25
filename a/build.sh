@@ -1,11 +1,14 @@
 #!/bin/bash
 
+SHELL_DIR=$(dirname "$BASH_SOURCE")
+APP_DIR=$(cd $SHELL_DIR; pwd)
+
 set -e
 set -x
 
-rm -rf build
-mkdir build
-pushd build
+rm -rf $APP_DIR/build
+mkdir $APP_DIR/build
+pushd $APP_DIR/build
 
 conan install .. --build=missing
 
@@ -13,4 +16,4 @@ conan install .. --build=missing
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build .
 
-bin/main
+$APP_DIR/bin/main

@@ -2,5 +2,8 @@
 
 set -ex
 
-conan remove "module_*"
+# clear all local cache
+rm -rf /root/.conan/data/module_*
+
 python build.py
+./a/build.sh
