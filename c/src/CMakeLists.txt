@@ -12,5 +12,6 @@ SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY})
 
 ADD_LIBRARY(module_c module_c.cpp)
 ADD_EXECUTABLE(greet main.cpp)
-TARGET_LINK_LIBRARIES(greet module_d)
 TARGET_LINK_LIBRARIES(greet module_c)
+
+target_link_libraries(greet ${CONAN_LIBS})
