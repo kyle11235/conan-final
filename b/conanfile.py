@@ -37,16 +37,16 @@ conan_basic_setup()''')
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure(source_folder="conan-final/c/src")
+        cmake.configure(source_folder="conan-final/b/src")
         cmake.build()
 
         # Explicit way:
-        # self.run('cmake %s/conan-final/c/src %s'
+        # self.run('cmake %s/conan-final/b/src %s'
         #          % (self.source_folder, cmake.command_line))
         # self.run("cmake --build . %s" % cmake.build_config)
 
     def package(self):
-        self.copy("*.h", dst="include", src="conan-final/c/src")
+        self.copy("*.h", dst="include", src="conan-final/b/src")
         self.copy("*module_b.lib", dst="lib", keep_path=False)
         self.copy("*.dll", dst="bin", keep_path=False)
         self.copy("*.so", dst="lib", keep_path=False)
