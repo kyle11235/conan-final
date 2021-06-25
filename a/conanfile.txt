@@ -1,6 +1,6 @@
 [requires]
-module_b/0.1
-module_c/0.1
+module_b/0.0.1
+module_c/0.0.1
 
 [generators]
 cmake
