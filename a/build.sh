@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# start
+start=`date +%s`
+
 SHELL_DIR=$(dirname "$BASH_SOURCE")
 APP_DIR=$(cd $SHELL_DIR; pwd)
 
@@ -17,3 +20,8 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build .
 
 $APP_DIR/build/bin/main
+
+# end
+end=`date +%s`
+runtime=$((end-start))
+echo "total time="$runtime
