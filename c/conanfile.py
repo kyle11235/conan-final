@@ -22,28 +22,28 @@ class HelloConan(ConanFile):
 
     def source(self):
         
-        # self.run("git clone https://github.com.cnpmjs.org/conan-io/hello.git")
+        self.run("git clone https://github.com.cnpmjs.org/kyle11235/conan-final.git")
 
         # This small hack might be useful to guarantee proper /MT /MD linkage
         # in MSVC if the packaged project doesn't have variables to set it
         # properly
-        tools.replace_in_file("src/CMakeLists.txt", "PROJECT(HelloWorld)",
+        tools.replace_in_file("c/src/CMakeLists.txt", "PROJECT(HelloWorld)",
                               '''PROJECT(HelloWorld)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()''')
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure(source_folder="src")
+        cmake.configure(source_folder="c/src")
         cmake.build()
 
         # Explicit way:
-        # self.run('cmake %s/src %s'
+        # self.run('cmake %s/c/src %s'
         #          % (self.source_folder, cmake.command_line))
         # self.run("cmake --build . %s" % cmake.build_config)
 
     def package(self):
-        self.copy("*.h", dst="include", src="src")
+        self.copy("*.h", dst="include", src="c/src")
         self.copy("*module_c.lib", dst="lib", keep_path=False)
         self.copy("*.dll", dst="bin", keep_path=False)
         self.copy("*.so", dst="lib", keep_path=False)
