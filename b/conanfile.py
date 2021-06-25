@@ -30,7 +30,7 @@ class HelloConan(ConanFile):
         # This small hack might be useful to guarantee proper /MT /MD linkage
         # in MSVC if the packaged project doesn't have variables to set it
         # properly
-        tools.replace_in_file("conan-final/c/src/CMakeLists.txt", "PROJECT(HelloWorld)",
+        tools.replace_in_file("conan-final/b/src/CMakeLists.txt", "PROJECT(HelloWorld)",
                               '''PROJECT(HelloWorld)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()''')
