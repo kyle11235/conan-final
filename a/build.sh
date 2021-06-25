@@ -16,4 +16,4 @@ conan install .. --build=missing
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build .
 
-$APP_DIR/bin/main
+$APP_DIR/build/bin/main
