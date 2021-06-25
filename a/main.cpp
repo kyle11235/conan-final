@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "module_b.h"
 #include "module_c.h"
 
