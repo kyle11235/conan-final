@@ -8,6 +8,6 @@ void module_c() {
 
     module_d();
 
-    std::cout << "module_c = v0.1" <<std::endl;
+    std::cout << "module_c = v0.0.1" <<std::endl;
     
 }

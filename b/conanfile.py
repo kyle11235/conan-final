@@ -3,7 +3,7 @@ from conans import ConanFile, CMake, tools
 
 class HelloConan(ConanFile):
     name = "module_b"
-    version = "0.1"
+    version = "0.0.1"
     license = "<Put the package license here>"
     author = "<Put your name here> <And your email here>"
     url = "<Package recipe repository url here, for issues about the package>"
@@ -14,7 +14,7 @@ class HelloConan(ConanFile):
     default_options = {"shared": False, "fPIC": True}
     generators = "cmake"
 
-    requires = "module_d/0.1@final/testing"
+    requires = "module_d/0.0.1@final/testing"
 
     def config_options(self):
         if self.settings.os == "Windows":
@@ -23,6 +23,9 @@ class HelloConan(ConanFile):
     def source(self):
         
         self.run("git clone https://github.com.cnpmjs.org/kyle11235/conan-final.git")
+
+        # for simple testing, I don't checkout tag
+        # git checkout v0.0.1
 
         # This small hack might be useful to guarantee proper /MT /MD linkage
         # in MSVC if the packaged project doesn't have variables to set it

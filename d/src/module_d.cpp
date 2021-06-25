@@ -4,5 +4,5 @@
 
 
 void module_d() {
-    std::cout << "module_d = v0.1" <<std::endl;
+    std::cout << "module_d = v0.0.1" <<std::endl;
 }
