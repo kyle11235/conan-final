@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "module_d/module_d.h"
+#include "module_d.h"
 #include "module_c.h"
 
 
