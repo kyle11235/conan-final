@@ -6,7 +6,7 @@
 
 void module_c() {
 
-    module_d::module_d();
+    module_d();
 
     std::cout << "module_c = v0.1" <<std::endl;
     
