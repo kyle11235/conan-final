@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'java-docker-slave'
+    }
+
+  }
   stages {
     stage('build module = d') {
       steps {
